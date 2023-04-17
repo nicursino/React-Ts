@@ -12,8 +12,8 @@ const useLoterias = () => {
         const response = await axios.get('https://servicebus2.caixa.gov.br/portaldeloterias/api/home/ultimos-resultados');
         const { data } = response;
 
-        const megasenaData = data.filter((item) => item.nome === 'MEGA-SENA')[0];
-        const lotofacilData = data.filter((item) => item.nome === 'LOTOFÁCIL')[0];
+        const megasenaData = data.filter((item: { nome: any; }) => item.nome === 'MEGA-SENA')[0];
+        const lotofacilData = data.filter((item: { nome: any; }) => item.nome === 'LOTOFÁCIL')[0];
 
         setMegasena(megasenaData);
         setLotofacil(lotofacilData);

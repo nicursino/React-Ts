@@ -1,4 +1,4 @@
-export interface Resultado {
+export interface ResultadoMegaSena {
     tipoJogo: string;
     numeroConcurso: number;
     dataApuracao: string;
@@ -9,8 +9,8 @@ export interface Resultado {
     valorEstimadoProximoConcurso: number;
   }
   
-  export interface Loteria {
+  export interface ResultadoLotoFacil {
     nome: string;
-    ultimosResultados: Resultado[];
+    ultimosResultados: ResultadoMegaSena[];
   }
   

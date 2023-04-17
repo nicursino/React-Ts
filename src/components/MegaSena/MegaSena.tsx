@@ -14,7 +14,7 @@ const MegaSena = () => {
       </div>
       <div className="megasena-content">
         <div className="megasena-numbers">
-          {megasena.numbers && megasena.numbers.map((number, index) => (
+          {megasena.numbers && megasena.numbers.map((number: number, index: any) => (
             <span key={index}>{number}</span>
           ))}
         </div>

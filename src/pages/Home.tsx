@@ -1,6 +1,6 @@
 import React from 'react';
-import { MegaSena } from '../components/MegaSena';
-import { Lotofacil } from '../components/Lotofacil';
+import  MegaSena  from '../components/MegaSena/MegaSena';
+import  Lotofacil  from '../components/Lotofacil/Lotofacil';
 
 export const Home: React.FC = () => {
   return (

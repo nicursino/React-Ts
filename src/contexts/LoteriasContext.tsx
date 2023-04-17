@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
 import axios from "axios";
-import { ResultadoMegaSena, ResultadoLotoFacil } from "../types";
+import { ResultadoMegaSena, ResultadoLotoFacil } from "../types/LoteriasTypes";
 
 interface LoteriasContextData {
   ultimoResultadoMegaSena: ResultadoMegaSena | null;

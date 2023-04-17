@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { LoteriasContext } from "../contexts/LoteriasContext";
-import { formatarData } from "../utils/dataUtils";
 import "../styles/lotofacil.css";
 
 const Lotofacil: React.FC = () => {
@@ -33,3 +32,7 @@ const Lotofacil: React.FC = () => {
 };
 
 export default Lotofacil;
+function formatarData(dataApuracao: any): React.ReactNode {
+  throw new Error("Function not implemented.");
+}
+
