@@ -5,13 +5,20 @@ import { ResultadoMegaSena, ResultadoLotoFacil } from "../types/LoteriasTypes";
 interface LoteriasContextData {
   ultimoResultadoMegaSena: ResultadoMegaSena | null;
   ultimoResultadoLotoFacil: ResultadoLotoFacil | null;
+  lotofacil:ResultadoLotoFacil | null;
   carregando: boolean;
   erro: boolean;
+}
+
+interface lotteriesData {
+  megasena: ResultadoMegaSena | null;
+  lotofacil: ResultadoLotoFacil | null;
 }
 
 export const LoteriasContext = createContext<LoteriasContextData>({
   ultimoResultadoMegaSena: null,
   ultimoResultadoLotoFacil: null,
+  lotofacil: null,
   carregando: false,
   erro: false,
 });
@@ -27,6 +34,7 @@ const LoteriasProvider: React.FC<LoteriasProviderProps> = ({ children }) => {
     useState<ResultadoLotoFacil | null>(null);
   const [carregando, setCarregando] = useState(true);
   const [erro, setErro] = useState(false);
+  const [lotofacil, setLotofacil] = useState<ResultadoLotoFacil | null>(null);
 
   useEffect(() => {
     async function carregaResultados() {
@@ -40,6 +48,7 @@ const LoteriasProvider: React.FC<LoteriasProviderProps> = ({ children }) => {
           "https://servicebus2.caixa.gov.br/portaldeloterias/api/v1/loterias/2102/draws/latest"
         );
         setUltimoResultadoLotoFacil(resLotoFacil.data.data[0]);
+        setLotofacil(resLotoFacil.data.data[0]);
 
         setCarregando(false);
       } catch (error) {
@@ -57,6 +66,7 @@ const LoteriasProvider: React.FC<LoteriasProviderProps> = ({ children }) => {
       value={{
         ultimoResultadoMegaSena,
         ultimoResultadoLotoFacil,
+        lotofacil,
         carregando,
         erro,
       }}

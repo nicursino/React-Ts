@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
-import { LoteriasContext } from '../../contexts/LoteriasContext';
+import { LoteriasContext } from '../contexts/LoteriasContext';
 import '../MegaSena/MegaSena.css';
 
 const MegaSena = () => {
-  const { lotteriesData } = useContext(LoteriasContext);
-  const { megasena } = lotteriesData;
+  const { LoteriasContextData } = useContext(LoteriasContext);
+  const { megasena } = LoteriasContextData;
 
   return (
     <div className="megasena">

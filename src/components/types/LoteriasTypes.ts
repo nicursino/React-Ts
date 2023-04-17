@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface ResultadoMegaSena {
     tipoJogo: string;
     numeroConcurso: number;
@@ -10,6 +12,11 @@ export interface ResultadoMegaSena {
   }
   
   export interface ResultadoLotoFacil {
+    dataApuracao(dataApuracao: any): import("react").ReactNode;
+    valorPremio: ReactNode;
+    ganhadores: ReactNode;
+    resultadoOrdenado: any;
+    numero: ReactNode;
     nome: string;
     ultimosResultados: ResultadoMegaSena[];
   }
