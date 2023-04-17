@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { LoteriasContext } from '../../contexts/LoteriasContext';
-import '../styles/mega-sena.css';
+import '../MegaSena/MegaSena.css';
 
 const MegaSena = () => {
   const { lotteriesData } = useContext(LoteriasContext);

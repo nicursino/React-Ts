@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { LoteriasContext } from "../contexts/LoteriasContext";
-import "../styles/lotofacil.css";
+import "../Lotofacil/Lotofacil.css";
 
 const Lotofacil: React.FC = () => {
   const { lotofacil } = useContext(LoteriasContext);
