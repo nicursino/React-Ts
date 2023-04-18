@@ -1,17 +1,8 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes as Switch } from 'react-router-dom';
-import { Home } from './pages/Home';
+import { ContextoProvider } from "./contexts/LoteriasContext";
+import Principal from "./pages/Home";
 
 function App() {
-  return (
-    <Router>
-      <div className="App">
-        <Switch>
-          <Route  path="/" element={<Home/>} />
-        </Switch>
-      </div>
-    </Router>
-  );
+  return <ContextoProvider><Principal /></ContextoProvider> 
 }
 
 export default App;

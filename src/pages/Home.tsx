@@ -1,13 +1,22 @@
-import React from 'react';
-import  MegaSena  from '../components/MegaSena/MegaSena';
-import  Lotofacil  from '../components/Lotofacil/Lotofacil';
+import Megasena from "../components/MegaSena/MegaSena";
+import Lotofacil from "../components/Lotofacil/Lotofacil";
+import { useContexto } from "../hooks";
+import "../css/estilo.css";
 
-export const Home: React.FC = () => {
-  return (
-    <div>
-      <h1>Últimos resultados</h1>
-      <MegaSena />
-      <Lotofacil />
-    </div>
-  );
-};
+function Principal() {
+    const { megasena, lotofacil } = useContexto();
+    return (
+        <>
+            {megasena.numeroDoConcurso || lotofacil.numeroDoConcurso ?
+                <>
+                <div> <Megasena /> </div>
+                <div><Lotofacil /></div>
+                </>
+                :
+                <div> Carregando... </div>
+            }
+        </>
+    )
+}
+
+export default Principal;

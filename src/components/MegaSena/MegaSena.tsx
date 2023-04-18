@@ -1,31 +1,38 @@
-import React, { useContext } from 'react';
-import { LoteriasContext } from '../contexts/LoteriasContext';
-import '../MegaSena/MegaSena.css';
+import { useContexto } from "../../hooks";
 
-const MegaSena = () => {
-  const { LoteriasContextData } = useContext(LoteriasContext);
-  const { megasena } = LoteriasContextData;
+function Megasena(){
 
-  return (
-    <div className="megasena">
-      <div className="megasena-header">
-        <img src={process.env.PUBLIC_URL + '/assets/trevo-megasena.png'} alt="Mega-Sena" />
-        <h2>MEGA-SENA</h2>
-      </div>
-      <div className="megasena-content">
-        <div className="megasena-numbers">
-          {megasena.numbers && megasena.numbers.map((number: number, index: any) => (
-            <span key={index}>{number}</span>
+    const {megasena} = useContexto();
+    console.log(megasena)
+    return (    
+        <div id = "homebody"> 
+            <table>
+                <tr id="linha">
+                <td> <td className="primeiraColuna"><img src={require('../../assets/trevo-megasena.png')} /></td><td><strong id="tituloMega">MEGA-SENA</strong></td></td>
+                    <td>
+                    {megasena.dezenas.map(numero => (
+            <><td id="dezenas"><label id="labelDezenas">{numero}</label></td>
+            <td id="espacoDezenas"></td></>
           ))}
+          </td>
+                </tr>
+                <tr>
+                <td>
+                    <td className="primeiraColuna"></td>
+                    <td id="coluna">Estimativa do prêmio do próximo concurso. Sorteio em {megasena.dataProximoConcurso}:</td>
+                </td>
+                    <td id="acumulado"><h1>{megasena.acumulado ? "ACUMULOU!": "Não Acumulado"}</h1></td>
+                </tr>
+                <tr>
+                    <td><td className="primeiraColuna"></td>
+                        <td id="tituloMega"> R$ {megasena.valorEstimadoProximoConcurso.toLocaleString('pt-BR', { style: 'decimal', maximumFractionDigits: 0 })},00</td>
+                    </td>
+                        <td>Concurso {megasena.numeroDoConcurso} {megasena.dataPorExtenso}</td>
+                </tr>
+           </table>
         </div>
-        <div className="megasena-info">
-          <p className="megasena-prize">{megasena.prize}</p>
-          <p className="megasena-winners">{megasena.winners}</p>
-          <p className="megasena-date">{megasena.date}</p>
-        </div>
-      </div>
-    </div>
-  );
-};
+    )
+}
 
-export default MegaSena;
+export default Megasena;
+

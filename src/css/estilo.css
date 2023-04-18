@@ -1,0 +1,53 @@
+#homebody{
+    font-family: "Roboto";
+}
+#dezenas{
+    border-radius: 50%;
+    background-color: #209869;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+    border: #209869;
+    
+}
+#linha{
+    height: 30px;
+    padding-bottom: 7%;
+}
+#acumulado{
+    color: #0066b3;
+}
+#tituloMega{
+    color: #209869;
+    font-size: 30px;
+}
+#tituloLOTO{
+    color: #930089;
+    font-size: 30px;
+}
+#labelDezenasLF{
+    color: #930089;
+    font-size: 30px;
+    padding-right: 50px;
+}
+#coluna{
+    width: 30%;
+    padding-right: 50px;
+    
+}
+#labelDezenas{
+    font-size: large;
+    color: #fff;
+}
+#espacoDezenas{
+    padding-right: 10px;
+}
+table {
+    border-collapse: collapse;
+  }
+  td, th {
+    padding: 5px;
+  }
+  .primeiraColuna{
+    width: 5%;
+  }

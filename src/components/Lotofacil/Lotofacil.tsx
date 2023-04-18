@@ -1,38 +1,49 @@
-import React, { useContext } from "react";
-import { LoteriasContext }  from "../contexts/LoteriasContext";
-import "../Lotofacil/Lotofacil.css";
+import { useContexto } from "../../hooks";
 
-const Lotofacil: React.FC = () => {
-  const { lotofacil } = useContext(LoteriasContext);
+function Lotofacil(){
 
-  return (
-    <div className="lotofacil-container">
-      <img
-        className="lotofacil-trevo"
-        src={require("../assets/trevo-lotofacil.png").default}
-        alt="Trevo da Lotofácil"
-      />
-      <div className="lotofacil-info">
-        <h2 className="lotofacil-title">Lotofácil</h2>
-        {lotofacil ? (
-          <>
-            <p>
-              Concurso {lotofacil.numero} - {formatarData(lotofacil.dataApuracao)}
-            </p>
-            <p>{lotofacil.resultadoOrdenado.join(" - ")}</p>
-            <p>{lotofacil.ganhadores} ganhadores</p>
-            <p>R$ {lotofacil.valorPremio}</p>
-          </>
-        ) : (
-          <p>Carregando...</p>
-        )}
-      </div>
-    </div>
-  );
-};
+    const {lotofacil} = useContexto();
+    return (    
+        <div id = "homebody"> 
+            <hr/>
+            <table>
+                <tr id="linha">
+                    <td> <td className="primeiraColuna"><img src={require('../../assets/trevo-lotofacil.png')} /></td><td><strong id="tituloLOTO">LOTOFÁCIL</strong></td></td>
+                    <td>
+                    {[...Array(15)].map((_, index) => (
+                    <>
+                    {index % 5 === 0 && <tr key={index / 5} />}
+                    <td
+                        key={index}
+                        id="dezenasLF"
+                        style={{
+                        borderBottom: index < 10 ? "1px solid purple" : undefined
+                        }}
+                    >
+                        <label id="labelDezenasLF">{lotofacil.dezenas[index]}</label>
+                    </td>
+                    </>
+                ))}
+          </td>
+                </tr>
+                <tr>
+                <td>
+                    <td className="primeiraColuna"></td>
+                    <td id="coluna">Estimativa do prêmio do próximo concurso. Sorteio em {lotofacil.dataProximoConcurso}:</td>
+                </td>
+                    <td id="acumulado"><h1>{lotofacil.acumulado ? "ACUMULOU!": lotofacil.quantidadeGanhadores+" GANHADORES"}</h1></td>
+                </tr>
+                <tr>
+                    <td><td className="primeiraColuna"></td>
+                        <td id="tituloLOTO"> R$ {lotofacil.valorEstimadoProximoConcurso.toLocaleString('pt-BR', { style: 'decimal', maximumFractionDigits: 0 })},00</td>
+                    </td>
+                        <td>Concurso {lotofacil.numeroDoConcurso} {lotofacil.dataPorExtenso}</td>
+                </tr>
+           </table>
+           <hr></hr>
+        </div>
+    )
+}
 
 export default Lotofacil;
-function formatarData(dataApuracao: any): React.ReactNode {
-  throw new Error("Function not implemented.");
-}
 
