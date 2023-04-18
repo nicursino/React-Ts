@@ -40,7 +40,6 @@ function Lotofacil(){
                         <td>Concurso {lotofacil.numeroDoConcurso} {lotofacil.dataPorExtenso}</td>
                 </tr>
            </table>
-           <hr></hr>
         </div>
     )
 }
