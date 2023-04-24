@@ -30,11 +30,34 @@ body {
     color: #930089;
     font-size: 30px;
 }
+
+#tituloQUINA{
+    color:#260085;
+    font-size: 30px;
+}
+
 #labelDezenasLF{
     color: #930089;
     font-size: 30px;
     padding-right: 50px;
 }
+
+#labelDezenasQUINA{
+    color: white;
+    font-size: large;
+}
+
+#dezenasQUINA{
+    border-radius: 50%;
+    background-color: #260085;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+    border:#260085;
+    
+}
+
+
 #coluna{
     width: 30%;
     padding-right: 50px;

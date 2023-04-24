@@ -1,4 +1,5 @@
 export interface LoteriaProps {
+  quina: Props;
   megasena: Props;
   lotofacil: Props;
 }

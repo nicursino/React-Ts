@@ -9,7 +9,7 @@ function Menu() {
             <Link to="/megasena" style={{ marginLeft: 15, color:"#209869" }}>
                 Megasena
             </Link>
-            <Link to="/" style={{ marginLeft: 15, color:"#260085" }}>
+            <Link to="/quina" style={{ marginLeft: 15, color:"#260085" }}>
                 Quina
             </Link>
         </div>
