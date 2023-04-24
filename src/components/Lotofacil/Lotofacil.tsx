@@ -5,7 +5,6 @@ function Lotofacil(){
     const {lotofacil} = useContexto();
     return (    
         <div id = "homebody"> 
-            <hr/>
             <table>
                 <tr id="linha">
                     <td> <td className="primeiraColuna"><img src={require('../../assets/trevo-lotofacil.png')} /></td><td><strong id="tituloLOTO">LOTOFÁCIL</strong></td></td>

@@ -1,8 +1,12 @@
 import { ContextoProvider } from "./contexts/LoteriasContext";
-import Principal from "./pages/Home";
+import Rotas from "./routes";
 
 function App() {
-  return <ContextoProvider><Principal /></ContextoProvider> 
+  return ( 
+          <ContextoProvider>
+            <Rotas />
+          </ContextoProvider>
+  ); 
 }
 
 export default App;
