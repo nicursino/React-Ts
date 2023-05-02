@@ -59,8 +59,8 @@ body {
 }
 
 #coluna{
-    width: 90%;
-    padding-right: 50px;
+    width: 80%;
+    padding-right: 90px;
     
 }
 #labelDezenas{
@@ -77,7 +77,7 @@ table {
     padding: 5px;
   }
   .primeiraColuna{
-    width: 15%;
+    width: 0%;
   }
 
 #menu {
