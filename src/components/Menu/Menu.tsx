@@ -1,15 +1,30 @@
+import { useEffect, useState } from "react";
 import { BrowserRouter, Link } from "react-router-dom";
 
 function Menu() {
+    const [cinzaState, setCinza] = useState('');
+    useEffect(()=>{
+        const path = window.location.pathname;
+        if (path === "/lotofacil"){
+            setCinza(path)
+        }
+        if (path === "/megasena"){
+            setCinza(path)
+        }
+        if (path === "/quina"){
+            setCinza(path)
+        }
+    } )
+    
     return (
         <div style={{ padding: 10 }}>
-            <Link to="/lotofacil" style={{ marginLeft: 15, color:"#930089", fontWeight: 'bold', marginRight:'5px', fontSize: '20px', textDecorationLine: 'none' }}>
+            <Link to="/lotofacil" id={cinzaState === "/lotofacil" ? "menu":"menuLF"} style={{ marginLeft: 15, fontWeight: 'bold', marginRight:'5px', fontSize: '20px', textDecorationLine: 'none' }}>
                 Lotofácil
             </Link>
-            <Link to="/megasena" style={{ marginLeft: 15, color:"#209869", fontWeight: 'bold', marginRight:'5px', fontSize: '20px', textDecorationLine: 'none'  }}>
+            <Link to="/megasena" id={cinzaState === "/megasena" ? "menu":"menuMG"} style={{ marginLeft: 15, fontWeight: 'bold', marginRight:'5px', fontSize: '20px', textDecorationLine: 'none'  }}>
                 Megasena
             </Link>
-            <Link to="/quina" style={{ marginLeft: 15, color:"#260085", fontWeight: 'bold', marginRight:'5px', fontSize: '20px', textDecorationLine: 'none'  }}>
+            <Link to="/quina" id={cinzaState === "/quina" ? "menu":"menuQN"} style={{ marginLeft: 15, fontWeight: 'bold', marginRight:'5px', fontSize: '20px', textDecorationLine: 'none'  }}>
                 Quina
             </Link>
         </div>

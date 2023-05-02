@@ -79,3 +79,20 @@ table {
   .primeiraColuna{
     width: 15%;
   }
+
+#menu {
+    color: #aaa;
+    pointer-events: none;
+}
+
+#menuLF {
+    color: #930089;
+}
+
+#menuMG {
+    color: #209869;
+}
+
+#menuQN {
+    color:#260085;
+}
